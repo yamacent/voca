@@ -1,0 +1,12 @@
+<%= form_tag answers_mark_path do %>
+  <div class="questions">
+    <% @sentences.each do |sentence| %>
+      <%= sentence.id %> : <%= sentence.english %>
+      <div class="field">
+        <%= label_tag sentence.id, '回答: ' %>
+        <%= text_field_tag sentence.id %>
+      </div>
+    <% end %>
+  </div>
+  <%= submit_tag '採点' %>
+<% end %>
