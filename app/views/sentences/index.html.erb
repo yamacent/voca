@@ -1,0 +1,19 @@
+<h1>センテンス一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>原文</th>
+      <th>訳文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sentences.each do |sentence| %>
+      <tr>
+        <td><%= sentence.id %></td>
+        <td><%= sentence.english %></td>
+        <td><%= sentence.japanese %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
