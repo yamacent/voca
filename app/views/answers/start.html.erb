@@ -1,12 +1,14 @@
-<%= form_tag answers_mark_path do %>
-  <div class="questions">
-    <% @sentences.each do |sentence| %>
-      <%= sentence.id %> : <%= sentence.english %>
-      <div class="field">
-        <%= label_tag sentence.id, '回答: ' %>
-        <%= text_field_tag sentence.id %>
-      </div>
-    <% end %>
+<%= form_tag answers_mark_path, name: 'answer_form' do %>
+
+  <%= label_tag "日本語: #{@sentence.japanese}" %>
+
+  <div class="field">
+    <%= label_tag :answer, '回答: ' %>
+    <%= text_field_tag :answer, '', size: 120 %>
+    <%= hidden_field_tag :id, @sentence.id %>
   </div>
+
   <%= submit_tag '採点' %>
+
 <% end %>
+<%= link_to 'list', sentences_path %>

@@ -1,16 +1,16 @@
 class AnswersController < ApplicationController
 
   def start
-    @sentences = Sentence.where(id: 1..10)
+    @sentence = Answer.choice_sentence
   end
 
   def mark
-    # s = ''
-    # @sentences.each do |sentence|
-    #   s += sentence.japanese + "\n"
-    # end
-    # render text: s
-    render text: params.inspect
+    @user_answer = params[:answer]
+    @sentence = Sentence.find(params[:id])
+    correct_answer = @sentence.english
+    @result = Answer.mark(user_answer: @user_answer,
+      correct_answer: correct_answer)
+    # render text: [@user_answer, correct_answer, @result].inspect
   end
 
 end
