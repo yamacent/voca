@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @sentence.id %>
+</p>
+
+<p>
+  <strong>English:</strong>
+  <%= @sentence.english %>
+</p>
+
+<p>
+  <strong>Japanese:</strong>
+  <%= @sentence.japanese %>
+</p>
+
+<%= link_to 'Edit', edit_sentence_path %>
+<%= link_to 'Back', sentences_path %>

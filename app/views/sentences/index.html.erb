@@ -18,7 +18,7 @@
   <tbody>
     <% @sentences.each do |sentence| %>
       <tr>
-        <td><%= sentence.id %></td>
+        <td><%= link_to sentence.id, sentence_path(sentence) %></td>
         <td><%= sentence.english %></td>
         <td><%= sentence.japanese %></td>
         <% count = sentence.count
