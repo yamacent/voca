@@ -10,6 +10,9 @@
       <th>No.</th>
       <th>原文</th>
       <th>訳文</th>
+      <th>全</th>
+      <th>正</th>
+      <th>last</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +21,11 @@
         <td><%= sentence.id %></td>
         <td><%= sentence.english %></td>
         <td><%= sentence.japanese %></td>
+        <% count = sentence.count
+           count ||= Count.new %>
+        <td><%= count.try %></td>
+        <td><%= count.correct %></td>
+        <td><%= count.updated_at or '-' %></td>
       </tr>
     <% end %>
   </tbody>
