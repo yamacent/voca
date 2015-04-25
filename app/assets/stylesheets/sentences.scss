@@ -1,6 +1,5 @@
-@mixin table-cell($backcolor: #fff) {
+@mixin table-cell {
     padding: 6px;
-    background-color: $backcolor;
     border: 1px solid #b9b9b9;
 }
 
@@ -12,8 +11,18 @@ table {
     border-collapse: collapse;
 }
 
+tr {
+    &.odd-row {
+        background: #fff;
+    }
+    &.even-row {
+        background: #eef;
+    }
+}
+
 th {
-    @include table-cell(#eee);
+    @include table-cell;
+    background-color: #eee;
     text-align: center;
     vertical-align: top;
     color: #333;

@@ -17,7 +17,7 @@
   </thead>
   <tbody>
     <% @sentences.each do |sentence| %>
-      <tr>
+      <tr class="<%= cycle('odd-row', 'even-row') %>">
         <td><%= link_to sentence.id, sentence_path(sentence) %></td>
         <td><%= sentence.english %></td>
         <td><%= sentence.japanese %></td>
