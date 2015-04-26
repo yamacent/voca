@@ -1,4 +1,4 @@
-<%= form_tag answers_mark_path, name: 'answer_form' do %>
+<%= form_tag answers_mark_path, name: 'answer_form', remote: true do %>
 
   <%= label_tag "日本語: #{@sentence.japanese}" %>
 
@@ -12,3 +12,14 @@
 
 <% end %>
 <%= link_to 'list', sentences_path %>
+
+<div id="modal-result">
+  <p id="result-header"></p>
+  <p id="result-japanese"></p>
+  <p id="result-english"></p>
+  <p id="result-useranswer"></p>
+  <p>
+    <a id="modal-close" class="button-link">Close</a>
+    <%= link_to 'Edit', edit_sentence_path(@sentence) %>
+  </p>
+</div>
