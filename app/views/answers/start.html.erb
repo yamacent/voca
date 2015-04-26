@@ -4,7 +4,8 @@
 
   <div class="field">
     <%= label_tag :answer, '回答: ' %>
-    <%= text_field_tag :answer, '', size: 120 %>
+    <%= text_field_tag :answer, '', size: 120,
+      autocomplete: 'off', spellcheck: false %>
     <%= hidden_field_tag :id, @sentence.id %>
   </div>
 
