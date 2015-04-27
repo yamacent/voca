@@ -21,6 +21,7 @@ moveToNextQuestion = ->
 closeModal = ->
     $('#modal-result,#modal-overlay').fadeOut 'slow', ->
         moveToNextQuestion()
+        $('#modal-result').removeClass()
         $('#modal-overlay').remove()
 
 openModal = ->
@@ -45,9 +46,11 @@ $(document).on 'page:change', ->
         $(form).on 'ajax:success', (e, data) ->
             a = data.answer
             if a.result
-                $('#result-header').text('正解！')
+                $('#result-header').text('正解')
+                $('#modal-result').addClass('panel panel-success')
             else
-                $('#result-header').text('残念！')
+                $('#result-header').text('不正解')
+                $('#modal-result').addClass('panel panel-danger')
             $('#result-japanese').text('問題: ' + a.japanese)
             $('#result-english').text('答え: ' + a.english)
             $('#result-useranswer').text('回答: ' + a.user_answer)

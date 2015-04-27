@@ -12,20 +12,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :id %>: 
+  <div class="form-group">
+    <%= f.label :id %>:
     <%= @sentence.id %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :english %><br>
-    <%= f.text_field :english, size: 80 %>
+    <%= f.text_field :english, size: 80, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :japanese %><br>
-    <%= f.text_field :japanese, size: 80 %>
+    <%= f.text_field :japanese, size: 80, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 
 <% end %>

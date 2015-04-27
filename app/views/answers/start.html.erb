@@ -1,26 +1,31 @@
 <%= form_tag answers_mark_path, name: 'answer_form', remote: true do %>
 
-  <%= label_tag "日本語: #{@sentence.japanese}" %>
+  <div class="form-group">
+    <%= label_tag "日本語: #{@sentence.japanese}" %>
+  </div>
 
-  <div class="field">
-    <%= label_tag :answer, '回答: ' %>
+  <div class="form-group">
+    <%= label_tag :answer, '回答' %>
     <%= text_field_tag :answer, '', size: 120,
-      autocomplete: 'off', spellcheck: false %>
+      autocomplete: 'off', spellcheck: false,
+      placeholder: 'Input the sentence in English',
+      class: 'form-control' %>
     <%= hidden_field_tag :id, @sentence.id %>
   </div>
 
-  <%= submit_tag '採点' %>
+  <%= submit_tag '採点', class: 'btn btn-primary' %>
 
 <% end %>
-<%= link_to 'list', sentences_path %>
 
-<div id="modal-result">
-  <p id="result-header"></p>
-  <p id="result-japanese"></p>
-  <p id="result-english"></p>
-  <p id="result-useranswer"></p>
-  <p>
-    <a id="modal-close" class="button-link">Close</a>
-    <%= link_to 'Edit', edit_sentence_path(@sentence) %>
-  </p>
+<div id="modal-result" class="panel">
+  <p id="result-header" class="panel-heading"></p>
+  <div class="panel-body">
+    <p id="result-japanese"></p>
+    <p id="result-english"></p>
+    <p id="result-useranswer"></p>
+    <p>
+      <a id="modal-close" class="btn btn-danger">Close</a>
+      <%= link_to 'Edit', edit_sentence_path(@sentence), class: 'btn btn-default' %>
+    </p>
+  </div>
 </div>

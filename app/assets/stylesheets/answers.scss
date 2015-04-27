@@ -1,25 +1,29 @@
+@mixin result-sentence {
+    font-size: 15pt;
+}
+
 #modal-result {
     width: 80%;
-    margin: 0;
-    padding: 10px 20px;
-    border: 2px solid #aaa;
-    background: #fff;
     position: fixed;
     display: none;
     z-index: 2;
-    #result-header {
-        font-size: 20pt;
-        color: #f00;
-    }
 }
 
-.button-link {
-    color: #00f;
-    text-decoration: underline;
-    &:hover {
-        cursor: pointer;
-        color: #f00;
-    }
+#result-header {
+    font-size: 15pt;
+    font-style: bold;
+}
+
+#result-japanese {
+    @include result-sentence
+}
+
+#result-english {
+    @include result-sentence
+}
+
+#result-useranswer {
+    @include result-sentence
 }
 
 #modal-overlay {

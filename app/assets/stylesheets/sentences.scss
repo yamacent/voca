@@ -6,32 +6,6 @@
 body {
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-tr {
-    &.odd-row {
-        background: #fff;
-    }
-    &.even-row {
-        background: #eef;
-    }
-}
-
-th {
-    @include table-cell;
-    background-color: #eee;
-    text-align: center;
-    vertical-align: top;
-    color: #333;
-}
-
-td {
-    @include table-cell;
-}
-
 #page-top {
     position: fixed;
     bottom: 20px;
