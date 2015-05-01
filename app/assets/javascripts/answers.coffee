@@ -16,7 +16,7 @@ isModalOpen = ->
     $('#modal-overlay')[0]?
 
 moveToNextQuestion = ->
-    location.href = '/answers/start'
+    location.href = '/start'
 
 closeModal = ->
     $('#modal-result,#modal-overlay').fadeOut 'slow', ->
